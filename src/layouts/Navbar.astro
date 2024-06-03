@@ -18,7 +18,6 @@
         z-index: 50;
     }
     .menu-mobile {
-        border-radius: 50px;
         margin-top: 2em;
         margin-left: 1em;
         margin-right: 1em;
@@ -35,7 +34,7 @@
 
 </style>
 
-<nav class="bg-white bg-[url('/img/paw-patern-png.png')] p-4 nav-wrapper shadow-md flex items-center justify-between fixed inset-x-5 top-5 z-10">
+<nav class="bg-white bg-[url('/img/paw-patern-png.png')] p-4 nav-wrapper shadow-md flex items-center justify-between fixed inset-x-5 z-30 top-5">
     <a href="/" class="flex items-center">
         <img src="img/joycat-logo.svg" alt="">
         <span class="ml-2 text-xl font-bold"></span>
@@ -56,7 +55,7 @@
 
 <!-- Mobile Menu -->
 <div id="mobile-menu-wrapper" class="hidden">
-    <div id="mobile-menu" class="bg-white shadow-md p-4 menu-mobile fixed inset-x-5 top-24 z-10">
+    <div id="mobile-menu" class="bg-white shadow-md p-4 menu-mobile fixed inset-x-5 top-24 bottom-0 z-30 rounded-t-[50px]">
         <ul class="space-y-4 text-center">
             <li><a href="/about" class="block text-violet-800 hover:text-blue-500 text-lg font-bold">Tentang kami</a></li>
             <li><a href="/clinic" class="block text-violet-800 hover:text-blue-500 text-lg font-bold">Klinik</a></li>
@@ -70,15 +69,20 @@
     </div>
 </div>
 
+<div class="fixed hidden inset-0 bg-black/80 z-20" id="overlay"></div>
+
 <script>
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenuWrapper = document.getElementById('mobile-menu-wrapper');
     const hamburgerIcon = document.querySelector('#menu-btn img:nth-child(1)');
     const closeIcon = document.querySelector('#menu-btn img:nth-child(2)');
+    const overlay = document.querySelector('#overlay')
 
     menuBtn.addEventListener('click', () => {
         mobileMenuWrapper.classList.toggle('hidden');
         hamburgerIcon.classList.toggle('hidden');
         closeIcon.classList.toggle('hidden');
+        overlay.classList.toggle('hidden');
+        overlay.classList.toggle('pointer-events-none');
     });
 </script>
