@@ -3,6 +3,7 @@
         border-radius: 100px;
         padding-left: 2em;
         padding-right: 2em;
+        background-image: url(img/paw-pattern\ 1.svg);
     }
     .mobile-menu-wrapper {
         display: flex;
@@ -20,6 +21,7 @@
         margin-top: 2em;
         margin-left: 1em;
         margin-right: 1em;
+        background-image: url(img/paw-pattern\ 1.svg);
     }
 
     .wa-container {
@@ -32,17 +34,17 @@
 
 </style>
 
-<nav class="bg-white bg-[url('/img/paw-patern-png.png')] p-4 nav-wrapper shadow-md flex items-center justify-between fixed inset-x-5 z-30 top-5">
+<nav style="background-image: url(img/paw-patern-png.png);" class="bg-white p-4 nav-wrapper shadow-md flex items-center justify-between fixed inset-x-5 top-5 z-10 ">
     <a href="/" class="flex items-center">
         <img src="img/joycat-logo.svg" alt="">
         <span class="ml-2 text-xl font-bold"></span>
     </a>
     <ul class="hidden md:flex space-x-4">
-        <li><a href="/about" class="text-violet-800 hover:text-blue-500 font-bold">Tentang kami</a></li>
-        <li><a href="/clinic" class="text-violet-800 hover:text-blue-500 font-bold">Klinik</a></li>
-        <li><a href="/daycare" class="text-violet-800 hover:text-blue-500 font-bold">Daycare & Grooming</a></li>
+        <li><a href="/about" class="text-[#2e5171] hover:hover:text-[#5b84ab] font-bold">Tentang kami</a></li>
+        <li><a href="/clinic" class="text-[#2e5171] hover:hover:text-[#5b84ab] font-bold">Klinik</a></li>
+        <li><a href="/daycare" class="text-[#2e5171] hover:hover:text-[#5b84ab] font-bold">Daycare & Grooming</a></li>
         <li class="flex items-center space-x-2">
-            <a href="/adoption" class="text-violet-800 hover:text-blue-500 font-bold">Adopsi</a>
+            <a href="/adoption" class="text-[#2e5171] hover:hover:text-[#5b84ab] font-bold">Adopsi</a>
         </li>
     </ul>
     <button id="menu-btn" class="md:hidden focus:outline-none">
@@ -53,34 +55,29 @@
 
 <!-- Mobile Menu -->
 <div id="mobile-menu-wrapper" class="hidden">
-    <div id="mobile-menu" class="bg-white bg-[url('/img/paw-patern-png.png')] shadow-md p-4 menu-mobile fixed inset-x-5 top-24 bottom-0 z-30 rounded-t-[50px]">
+    <div id="mobile-menu" class="bg-white shadow-md p-4 menu-mobile rounded-t-[50px] fixed inset-x-5 top-24 z-10 bottom-0">
         <ul class="space-y-4 text-center">
-            <li><a href="/about" class="block text-violet-800 hover:text-blue-500 text-lg font-bold">Tentang kami</a></li>
-            <li><a href="/clinic" class="block text-violet-800 hover:text-blue-500 text-lg font-bold">Klinik</a></li>
-            <li><a href="/daycare" class="block text-violet-800 hover:text-blue-500 text-lg font-bold">Daycare & Grooming</a></li>
-            <li><a href="/adoption" class="block text-violet-800 hover:text-blue-500 text-lg font-bold">Adopsi</a></li>
-            <li class="wa-container">
+            <li><a href="/about" class="block text-[#2e5171] hover:text-[#5b84ab] text-lg font-bold">Tentang kami</a></li>
+            <li><a href="/clinic" class="block text-[#2e5171] hover:text-[#5b84ab] text-lg font-bold">Klinik</a></li>
+            <li><a href="/daycare" class="block text-[#2e5171] hover:text-[#5b84ab] text-lg font-bold">Daycare & Grooming</a></li>
+            <li><a href="/adoption" class="block text-[#2e5171] hover:text-[#5b84ab] text-lg font-bold">Adopsi</a></li>
+            <li class="wa-container gap-1">
                 <img class="wa-icon" src="img/wa-icon.svg" alt="WhatsApp Icon">
-                <a href="https://wa.me/0812345678910" class="block text-violet-800 hover:text-blue-500 text-lg font-bold">0812-3456-78910</a>
+                <a href="https://wa.me/0812345678910" class="block text-[#2e5171] hover:text-[#5b84ab] text-lg font-bold">0812-3456-78910</a>
             </li>
         </ul>
     </div>
 </div>
-
-<div class="fixed hidden inset-0 bg-black/80 z-20" id="overlay"></div>
 
 <script>
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenuWrapper = document.getElementById('mobile-menu-wrapper');
     const hamburgerIcon = document.querySelector('#menu-btn img:nth-child(1)');
     const closeIcon = document.querySelector('#menu-btn img:nth-child(2)');
-    const overlay = document.querySelector('#overlay')
 
     menuBtn.addEventListener('click', () => {
         mobileMenuWrapper.classList.toggle('hidden');
         hamburgerIcon.classList.toggle('hidden');
         closeIcon.classList.toggle('hidden');
-        overlay.classList.toggle('hidden');
-        overlay.classList.toggle('pointer-events-none');
     });
 </script>
